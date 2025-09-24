@@ -11,6 +11,8 @@ License:       	GPL
 Requires: clang >= 20
 Requires: python3 >= 3.11
 
+#%topdir  /home/theodore/epiclang-rpm
+
 %description
 epiclang is the compiler wrapper used to compile Epitech C projects.
 

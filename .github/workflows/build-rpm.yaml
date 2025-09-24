@@ -15,8 +15,13 @@ jobs:
         run: sudo dnf install -y rpmdevtools
       - name: build rpm package
         run: rpmbuild --define "_topdir $(pwd)" -bb SPECS/epiclang.spec
-      - name: Release the Package
-        uses: softprops/action-gh-release@v1
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          files: RPMS/x86_64/epiclang-1.0.0-1.fc42.x86_64.rpm
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: RPMS/x86_64/epiclang-1.0.0-1.fc42.x86_64.rpm 
+          #asset_name: mything
+          tag: 1.0.0
+          overwrite: true
+          body: ""
 
