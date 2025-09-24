@@ -6,7 +6,9 @@ on:
 
 jobs:
   build:
-    runs-on: fedora:42
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:42
     steps:
       - uses: actions/checkout@v4
       - name: Install depencies
