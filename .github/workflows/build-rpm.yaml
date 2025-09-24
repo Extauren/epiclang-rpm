@@ -14,5 +14,5 @@ jobs:
       - name: Install depencies
         run: sudo dnf install -y rpmdevtools
       - name: build rpm package
-        run: rpmbuild -bb ./SPECS/epiclang.spec
+        run: rpmbuild --define "_topdir $(pwd)" -bb SPECS/epiclang.spec
 
