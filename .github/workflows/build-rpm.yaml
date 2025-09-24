@@ -3,18 +3,11 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: fedora:42
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - name: Install depencies
+          run: sudo dnf install -y rpmdevtools
+      - name: build rpm package
+        run: rpmbuild -bb ./SPECS/epiclang.spec
 
-    - name: build RPM package
-      id: rpm
-      uses: naveenrajm7/rpmbuild@master
-      with:
-        spec_file: "epiclang.spec"
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Binary RPM
-        path: ${{ steps.rpm.outputs.rpm_dir_path }}
