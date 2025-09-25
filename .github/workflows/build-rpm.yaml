@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: epiclang-${{ github.ref_name }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
-          path: RPMS/${{ env.ARCH }}/*.rpm
+          path: RPMS/${{ env.ARCH }}/epiclang-${{ github.ref_name }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
       
   release:
     name: Create release with rpm package
