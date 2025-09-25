@@ -1,5 +1,5 @@
 Name:           epiclang
-Version:        1.0.12
+Version:        1.0.17
 Release:        1%{?dist}
 Summary:        compiler for Epitech C projects
 Source0: 	epiclang
