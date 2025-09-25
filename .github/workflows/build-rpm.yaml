@@ -36,4 +36,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          files: epiclang-${{ github.ref_name }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
+          files: epiclang-${{ github.ref_name }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm/**/*.rpm
