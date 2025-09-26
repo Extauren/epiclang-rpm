@@ -9,6 +9,7 @@ License:       	GPL
 
 Requires: clang >= 20
 Requires: python3 >= 3.11
+Requires: epiclang-plugin-banana
 
 %description
 epiclang is the compiler wrapper used to compile Epitech C projects.
