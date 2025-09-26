@@ -26,20 +26,3 @@ jobs:
           name: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
           path: banana/RPMS/${{ env.ARCH }}/epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
       
-  release:
-    name: Create release with rpm package
-    needs: build_rpm
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-      - name: Download rpm artifact
-        uses: actions/download-artifact@v5
-        with:
-          name: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
-      - name: Create release
-        uses: softprops/action-gh-release@v2
-        if: github.ref_type == 'tag'
-        with:
-          files: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
-          token: ${{ secrets.RELEASE}}
