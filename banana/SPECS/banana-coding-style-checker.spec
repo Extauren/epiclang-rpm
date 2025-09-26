@@ -1,5 +1,5 @@
 Name:           epiclang-plugin-banana
-Version:        0.0.1
+Version:        1.0.18
 Release:        1%{?dist}
 Summary:        Epitech C coding style checker
 
