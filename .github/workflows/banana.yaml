@@ -6,7 +6,6 @@ on:
 
 env:
   DIST: fc42
-  ARCH: x86_64
   VERSION: 1.0.0
 
 jobs:
@@ -23,8 +22,8 @@ jobs:
       - name: Upload .rpm package as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
-          path: banana/RPMS/${{ env.ARCH }}/epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
+          name: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.src.rpm
+          path: banana/RPMS/${{ env.ARCH }}/epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.src.rpm
       
   release:
     name: Create release with rpm package
@@ -36,10 +35,10 @@ jobs:
       - name: Download rpm artifact
         uses: actions/download-artifact@v5
         with:
-          name: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
+          name: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.src.rpm
       - name: Create release
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          files: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.${{ env.ARCH }}.rpm
+          files: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.src.rpm
           token: ${{ secrets.RELEASE}}
