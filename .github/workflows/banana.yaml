@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.src.rpm
-          path: banana/RPMS/${{ env.ARCH }}/epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.src.rpm
+          path: banana/SRPMS/epiclang-plugin-banana-${{ env.VERSION }}-1.${{ env.DIST }}.src.rpm
       
   release:
     name: Create release with rpm package
