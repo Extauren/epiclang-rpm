@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Epitech C coding style checker
 
 License:       	GPL 
-Source0:	https://github.com/Extauren/epiclang-rpm/raw/refs/heads/main/epiclang-banana-plugin-1.0.0.tar.gz
+Source0:	https://github.com/Extauren/epiclang-rpm/raw/refs/heads/main/epiclang-plugin-banana-1.0.0.tar.gz
 
 %description
 Epitech C coding style checker
