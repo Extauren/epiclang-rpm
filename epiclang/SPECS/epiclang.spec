@@ -2,9 +2,9 @@ Name:           epiclang
 Version:        1.0.0
 Release:        1%{?dist}
 Summary:        compiler for Epitech C projects
-Source0: 	https://github.com/Extauren/epiclang-rpm/blob/main/epiclang-1.0.0.tar.gz
+Source0: 	https://github.com/Extauren/epiclang-rpm/raw/refs/heads/main/epiclang-1.0.0.tar.gz
 
-License:       	GPL 
+License:       	GPL
 
 Requires: clang >= 20
 Requires: python3 >= 3.11
