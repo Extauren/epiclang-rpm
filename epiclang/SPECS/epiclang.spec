@@ -2,8 +2,7 @@ Name:           epiclang
 Version:        1.0.0
 Release:        1%{?dist}
 Summary:        compiler for Epitech C projects
-Source0: 	epiclang
-Source1:	epiclang.py
+Source0: 	https://github.com/Extauren/epiclang-rpm/blob/main/epiclang-1.0.0.tar.gz
 
 License:       	GPL 
 
@@ -16,12 +15,15 @@ epiclang is the compiler wrapper used to compile Epitech C projects.
 
 It is a wrapper around clang-20 that loads the plug-ins installed in /usr/lib/epiclang/plugins and /usr/local/lib/epiclang/plugins
 
+%define debug_package %{nil}
+
 %prep
+%setup -q
 
 %install
 mkdir -p %{buildroot}/usr/local/bin
-cp %{SOURCE0} %{buildroot}/usr/local/bin/
-cp %{SOURCE1} %{buildroot}/usr/local/bin/
+cp %{name} %{buildroot}/usr/local/bin/
+cp %{name}.py %{buildroot}/usr/local/bin/
 
 %files
 /usr/local/bin/%{name}
